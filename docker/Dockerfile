@@ -9,8 +9,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-rec
 # Define mountable directories
 VOLUME ["/etc/api-umbrella", "/opt/api-umbrella/var/db", "/opt/api-umbrella/var/log"]
 
-# Expose HTTP and HTTPS ports
-EXPOSE 80 443
+# do not expose ports by default - let someone else decide
+# EXPOSE 80 443
 
 # Run the API Umbrella service
 CMD ["api-umbrella", "run"]
